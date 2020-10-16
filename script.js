@@ -2,40 +2,40 @@ let choices = ['rock', 'paper', 'scissors'];
 let userPoints = 0;
 let compPoints = 0;
 
-function playGame() {
+function playRound(playerSelection, computerSelection) {
 	// User prompted to make a choice: Rock, Paper, Scissors and user choice recorded in a variable.
-	let userChoice = prompt('Rock, paper, scissors?').toLowerCase();
+	playerSelection = prompt('Rock, paper, scissors?').toLowerCase();
 	// Computer makes a random choice
 	function computerPlay() {
 	let choice = choices[Math.floor(Math.random() * choices.length)];
 	return choice;
 	}
 	// Computer choice recorded in a variable.
-	let compChoice = computerPlay();
+	computerSelection = computerPlay();
 	// Display user and computer choices
-	console.log(`Your choice is: ${userChoice}`);
-	console.log(`The computer's choice is: ${compChoice}`);
+	console.log(`Your choice is: ${playerSelection}`);
+	console.log(`The computer's choice is: ${computerSelection}`);
 	// If user choice ____ and computer choice ____, result ____
-	if (userChoice === 'rock' && compChoice === 'scissors') {
+	if (playerSelection === 'rock' && computerSelection === 'scissors') {
 		userPoints = userPoints + 1;
 		console.log(`You win this round`);
-	} else if (userChoice === 'rock' && compChoice === 'paper') {
+	} else if (playerSelection === 'rock' && computerSelection === 'paper') {
 		compPoints = compPoints + 1;
 		console.log(`You lose this round`);
-	} else if (userChoice === 'rock' && compChoice === 'rock') {
+	} else if (playerSelection === 'rock' && computerSelection === 'rock') {
 		console.log(`It is a tie!`)
-	} else if (userChoice === 'scissors' && compChoice === 'paper') {
+	} else if (playerSelection === 'scissors' && computerSelection === 'paper') {
 		userPoints = userPoints + 1
 		console.log(`You win this round`);
-	} else if (userChoice === 'scissors' && compChoice === 'rock') {
+	} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
 		compPoints = compPoints + 1;
 		console.log(`You lose this round`);
-	} else if (userChoice === 'scissors' && compChoice === 'scissors') {
+	} else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
 		console.log(`It is a tie!`);
-	} else if (userChoice === 'paper' && compChoice === 'rock') {
+	} else if (playerSelection === 'paper' && computerSelection === 'rock') {
 		userPoints = userPoints + 1
 		console.log(`You win this round`);
-	} else if (userChoice == 'paper' && compChoice == 'scissors') {
+	} else if (playerSelection == 'paper' && computerSelection == 'scissors') {
 		compPoints = compPoints + 1;
 		console.log(`You lose this round`);
 	} else {
