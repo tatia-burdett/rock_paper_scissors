@@ -1,50 +1,65 @@
-/* 
-User prompted to make a choice: Rock, Paper, Scissors.
-User choice recorded in a variable.
-Computer makes a random choice.
-Computer choice record in a variable.
+let choices = ['rock', 'paper', 'scissors'];
+let userPoints = 0;
+let compPoints = 0;
 
-If user choice is Rock
-	and computer choice is Scissors
-		+1 point for user
-		"You win this round"
-	and computer choice is Paper
-		+1 point for computer
-		"You lose this round"
-	and computer choice is Rock
-		0 points given
-		"It's a tie"
+// User prompted to make a choice: Rock, Paper, Scissors and user choice recorded in a variable.
 
-If user choice is Scissors
-	and computer choice is Paper
-		+1 point for user
-		"You win this round"
-	and computer choice is Rock
-		+1 point for computer
-		"You lose this round"
-	and computer choice is Scissors
-		0 points given
-		"It's a tie"
+let userChoice = prompt('Rock, paper, scissors?').toLowerCase();
 
-If user choice is Paper
-	and computer choice is Rock
-		+1 point for user
-		"You win this round"
-	and computer choice is Scissors
-		+1 point for computer
-		"You lose this round"
-	and computer choice is Paper
-		0 points given
-		"It's a tie"
+// Computer makes a random choice
 
-If the rounds played is less than 5
-		play another round
-	Else... if rounds played = 5
-		Display total user points
-		Display total computer points
+function computerChoice() {
+	let choice = choices[Math.floor(Math.random() * choices.length)];
+	return choice;
+}
 
-If user points > computer points
-		"Congratulations, you win!"
-	Else...
-		"Sorry, you lose!"
-*/
+// Computer choice recorded in a variable.
+
+let compChoice = computerChoice();
+
+console.log(`Your choice is: ${userChoice}`);
+console.log(`The computer's choice is: ${compChoice}`);
+
+
+/* If user choice is ____
+ 	and computer choice is ____
+ 		+1 point for user
+ 		"You win this round"
+ 	and computer choice is ___
+ 		+1 point for computer
+ 		"You lose this round"
+ 	and computer choice is ___
+ 		0 points given
+ 		"It's a tie" */
+
+if (userChoice === 'rock' && compChoice === 'scissors') {
+	userPoints = userPoints + 1;
+	console.log(`You win this round`);
+} else if (userChoice === 'rock' && compChoice === 'paper') {
+	console.log(`You lose this round`);
+} else if (userChoice === 'rock' && compChoice === 'rock') {
+	console.log(`It is a tie!`)
+} else if (userChoice === 'scissors' && compChoice === 'paper') {
+	console.log(`You win this round`);
+} else if (userChoice === 'scissors' && compChoice === 'rock') {
+	console.log(`You lose this round`);
+} else if (userChoice === 'scissors' && compChoice === 'scissors') {
+	console.log(`It is a tie!`);
+} else if (userChoice === 'paper' && compChoice === 'rock') {
+	console.log(`You win this round`);
+} else if (userChoice == 'paper' && compChoice == 'scissors') {
+	console.log(`You lose this round`);
+} else {
+	console.log(`It is a tie!`);
+};
+
+/* If the rounds played is less than 5
+ 		play another round
+ 	Else... if rounds played = 5
+ 		Display total user points
+ 		Display total computer points */
+
+/* If user points > computer points
+ 		"Congratulations, you win!"
+ 	Else...
+ 		"Sorry, you lose!" */
